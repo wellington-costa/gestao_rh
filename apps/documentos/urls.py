@@ -1,8 +1,8 @@
 from django.urls import path
 from .views import CreateDocumento
 
-urlpatterns = (
+urlpatterns = [
 
-    path('novo', CreateDocumento.as_view(), name = 'create_documento'),
+    path('novo/<int:funcionario_id>/', CreateDocumento.as_view(), name = 'create_documento'),
 
-)
+]
