@@ -6,13 +6,6 @@ class CreateDocumento(CreateView):
     model = Documentos
     fields = ['descricao', 'arquivo']
 
-
-    def get_success_url(self):
-
-        return reverse_lazy('update_funcionario')
-
-
-
     def post(self, request, *args, **kwargs):
         form = self.get_form()
         form.instance.funcionario_id = self.kwargs['funcionario_id']
